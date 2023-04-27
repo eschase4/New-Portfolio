@@ -8,12 +8,12 @@ import '../styles/contact.css'
 function Contact() {
 
     function sendEmail(e) {
-        e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+        e.preventDefault();   
 
         emailjs.sendForm('service_fle5mca', 'template_8hq1hwi', e.target, 'lo9Df5tOQo6XoBRtg')
             .then((result) => {
                 alert('Email succesfully sent!')
-                window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+                window.location.reload()   
             }, (error) => {
                 console.log(error.text);
             });
